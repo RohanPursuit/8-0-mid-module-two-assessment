@@ -168,12 +168,11 @@ function getAllMoviesReleasedAtOrBeforeYear(movies, years) {
 function getRottenTomatoesScoreByMovie(movies) {
   if(!movies.length) throw "No movies found"
 
-  const result = movies.map(({title, ratings}) => {
+  return movies.map(({title, ratings}) => {
     return {
       [title]: ratings.find(({source}) => source === "Rotten Tomatoes").value
     }
   })
-  return result
 }
 
 // Do not change anything below this line.
